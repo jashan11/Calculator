@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyCalculator.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key ="CalcStyle" TargetType="Button">
+                <Setter Property="BorderRadius" Value="0"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="FontSize" Value="36"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <Grid Padding="4,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Default">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="resultText" TextColor="White" FontSize="70" HorizontalTextAlignment="End" VerticalTextAlignment="End" Grid.ColumnSpan="4" LineBreakMode="NoWrap"/>
+
+
+        <Button Text="AC" Grid.Row="1" Grid.Column="0"
+                Clicked="OnClear" Style="{StaticResource CalcStyle}" />
+        <Button Text="Del" Grid.Row="1" Grid.Column="1"
+               Style="{StaticResource CalcStyle}" Clicked="OnDelete"  />
+        <Button Text="%" Grid.Row="1" Grid.Column="2"
+                Style="{StaticResource CalcStyle}" Clicked="OnPercentage" />
+        <Button Text="/" Grid.Row="1" Grid.Column="3" 
+                Style="{StaticResource CalcStyle}" Clicked="OnSelectOperator"/>
+       
+
+        <Button Text="7" Grid.Row="2" Grid.Column="0"
+               Style="{StaticResource CalcStyle}" Clicked="OnSelectNumber"  />
+        <Button Text="8" Grid.Row="2" Grid.Column="1"
+              Style="{StaticResource CalcStyle}" Clicked="OnSelectNumber" />
+        <Button Text="9" Grid.Row="2" Grid.Column="2"
+               Style="{StaticResource CalcStyle}" Clicked="OnSelectNumber" />
+        <Button Text="*" Grid.Row="2" Grid.Column="3"
+              Style="{StaticResource CalcStyle}" Clicked="OnSelectOperator" />
+
+        <Button Text="4" Grid.Row="3" Grid.Column="0"
+               Style="{StaticResource CalcStyle}" Clicked="OnSelectNumber" />
+        <Button Text="5" Grid.Row="3" Grid.Column="1"
+              Style="{StaticResource CalcStyle}" Clicked="OnSelectNumber"/>
+        <Button Text="6" Grid.Row="3" Grid.Column="2"
+               Style="{StaticResource CalcStyle}" Clicked="OnSelectNumber"/>
+        <Button Text="-" Grid.Row="3" Grid.Column="3"
+               Style="{StaticResource CalcStyle}"   Clicked="OnSelectOperator"/>
+
+
+        <Button Text="1" Grid.Row="4" Grid.Column="0"
+              Style="{StaticResource CalcStyle}" Clicked="OnSelectNumber"  />
+        <Button Text="2" Grid.Row="4" Grid.Column="1"
+               Style="{StaticResource CalcStyle}"  Clicked="OnSelectNumber" />
+        <Button Text="3" Grid.Row="4" Grid.Column="2"
+               Style="{StaticResource CalcStyle}" Clicked="OnSelectNumber" />
+        <Button Text="+" Grid.Row="4" Grid.Column="3"
+               Style="{StaticResource CalcStyle}"  Clicked="OnSelectOperator"/>
+
+
+        <Button Text="." Grid.Row="5" Grid.Column="0"
+             Style="{StaticResource CalcStyle}" Clicked="OnDecimal" />
+        <Button Text="0" Grid.Row="5" Grid.Column="1"
+               Style="{StaticResource CalcStyle}" Clicked="OnSelectNumber"/>
+        <Button Text="√" Grid.Row="5" Grid.Column="2"
+               Style="{StaticResource CalcStyle}" Clicked="OnSquareRoot" />
+        <Button Text="=" Grid.Row="5" Grid.Column="3"
+              Style="{StaticResource CalcStyle}" Clicked="OnCalculate" />
+    </Grid>
+
+</ContentPage>
+
