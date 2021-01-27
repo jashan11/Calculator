@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,13 +32,13 @@ namespace MyCalculator
                 this.resultText.Text = "";
 
                 if (flag < 0) 
-                    flag *= -1;
+                    flag *= -2;
             }
 
             this.resultText.Text += pressed;
 
             double number; 
-            if (double.TryParse(this.resultText.Text,out number))
+            if (double.TryParse(this.resultText.Text, out number))
             {
              
                 if (flag == 1)
@@ -54,7 +54,7 @@ namespace MyCalculator
 
         void OnSelectOperator(object sender, EventArgs e)
         {
-            flag = -2;
+            flag = -1;
             Button button = (Button)sender;
             string pressed = button.Text;
             this.resultText.Text += pressed;
@@ -71,40 +71,29 @@ namespace MyCalculator
 
         void OnPercentage(object sender, EventArgs e)
         {
-
-            if ((flag == -1) || (flag == 1))
+            if  (flag == 1)
             {
-
                 var result = firstNumber / 100;
                 this.resultText.Text = result.ToString();
                 firstNumber = result;
-                flag = -2;
             }
         }
         void OnSquareRoot(object sender, EventArgs e)
         {
-            if ((flag == -1) || (flag == 1))
+            if (flag == 1)
             {
-               
                 double result = Math.Sqrt(firstNumber);
-
                 this.resultText.Text = result.ToString();
                 result = firstNumber;
-                flag = -1;
             }
         }
 
         void OnDecimal(object sender, EventArgs e)
         {
-           
             if (!resultText.Text.Contains("."))
              {
                  resultText.Text += ".";
-                
              }
-           
-           
-
         }
         void OnDelete(object sender, EventArgs e)
         {
